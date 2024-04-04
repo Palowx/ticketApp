@@ -1,4 +1,4 @@
-## Ticket App - A Simple Ticket Management Application
+## Ticket App - A Simple Ticket Management Application 🎫
 This is a simple helpdesk support ticket management application built using MERN stack (Node.js, Express, Mongoose, React) along with tailwind.css. It allows users to create, view, update and filter tickets.
 
 ### Features:
@@ -6,10 +6,13 @@ This is a simple helpdesk support ticket management application built using MERN
 - View a list of all tickets, categorized into 4 columns and sort by their latest update and oldest update.
 - Update data of existing tickets.
 
-### API documentation
-There are 3 API endpoints in this application.
+### Link To 🔗:
+   - [`API Document`](#APIdocumentation)
+   - [`Specification`](#Specification)
+   - [`Installation`](#Installation)
 
-#### Database Schema
+## API documentation
+### Database Schema
 | Field              | Type | Description | Required|
 | :---------------- | :------: | :-------------- |:----------|
 | title        |   String   | Title of the ticket | Yes |
@@ -19,9 +22,9 @@ There are 3 API endpoints in this application.
 | createdAt |  Date   | Timestamp of ticket creation |No (default: current date/time) |
 | updatedAt |  Date   | Timestamp of ticket update |No (default: current date/time on update) |
 
-#### API Endpoints
+### API Endpoints
 The API provides the following endpoints for CRU (Create, Read, Update) operations on tickets:
-1. Create Ticket (POST /)
+1. Create Ticket (POST /tickets)
    #### Request:
     - Method: POST
     - Body: JSON containing the following fields:
@@ -34,12 +37,13 @@ The API provides the following endpoints for CRU (Create, Read, Update) operatio
      - Body: JSON containing the newly created ticket object
     #### Example:
      ```bash
-      USING POST /
+      USING POST /tickets
         Request Body:
         {
           "title": "Sample Ticket",
           "description": "This is a sample ticket description",
-          "contactInfo": "user@example.com"
+          "contactInfo": "user@example.com",
+          "status": "pending",
         }
      
         Response Body (example):
@@ -53,7 +57,7 @@ The API provides the following endpoints for CRU (Create, Read, Update) operatio
           "updatedAt": "2024-04-05T17:03:00.000Z"
         }
       ```
-2. Get All Tickets (GET /)
+2. Get All Tickets (GET /tickets)
     #### Request:
     - Method: GET
     #### Response:
@@ -61,7 +65,7 @@ The API provides the following endpoints for CRU (Create, Read, Update) operatio
      - Body: JSON array containing all ticket objects
     #### Example:
      ```bash
-      GET /
+      GET /tickets
       Response Body (example):
       [
         {
@@ -76,10 +80,10 @@ The API provides the following endpoints for CRU (Create, Read, Update) operatio
         // ... other tickets
       ]
       ```
-3. Update Ticket (PUT /:id)
+3. Update Ticket (PUT /tickets/:id)
     #### Request:
     - Method: PUT
-    - URL: / followed by the ticket ID (Object ID)
+    - URL: /tickets/ followed by the ticket ID (Object ID)
     - Body: JSON containing any of the following fields to update:
       - title (string)
       - description (string)
@@ -91,14 +95,13 @@ The API provides the following endpoints for CRU (Create, Read, Update) operatio
      - Status Code: 404 (Not Found) if the ticket is not found
     #### Example:
      ```bash
-      PUT /639234b21e98762c12345678
+      PUT /tickets/639234b21e98762c12345678
       Request Body:
       {
         "title": "Updated Ticket Title",
         "description": "This is an updated description"
         "contactInfo": "user@example.com",
         "status": "pending",
-        "createdAt": "2024-04-05T17:03:00.000Z",
         "updatedAt": "2024-04-05T17:04:00.000Z"
       }
       
@@ -115,7 +118,7 @@ The API provides the following endpoints for CRU (Create, Read, Update) operatio
       ```
 
 
-### Specification
+## Specification 📃
 
 1. Functionality
 
@@ -178,8 +181,9 @@ The API provides the following endpoints for CRU (Create, Read, Update) operatio
    - Implement search functionality.
    - Implement notification for ticket creation and updates.
    - Implement dark mode.
+   - Implement Draggable / Droppable 
 
-### Installation
+## Installation 💻
 1. Clone this repository:
 ```bash
 git clone https://github.com/palowx/ticketApp.git
