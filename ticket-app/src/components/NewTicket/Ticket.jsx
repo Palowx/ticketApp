@@ -26,7 +26,7 @@ export default function Ticket({isVisible,onClose}) {
         updatedAt: new Date().toISOString(),
       }
     
-      axios.post('http://localhost:1234/', dataForPost)
+      axios.post('http://localhost:1234/tickets', dataForPost)
       .then(result =>{
         console.log(result);
         alert("New Ticket Created!")

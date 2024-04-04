@@ -10,15 +10,17 @@ app.use(bodyParser.json());
 app.use(cors()); //access server side from front-end
 app.use(express.json()); //force to json format
 
-mongoose.connect('mongodb+srv://ploy:1234@atlascluster.bwuedr5.mongodb.net/cru')
+//Put password here
+const pwd = ''
+mongoose.connect(`mongodb+srv://ploy:${pwd}@atlascluster.bwuedr5.mongodb.net/cru`)
 
-app.post('/', (req, res)=>{
+app.post('/tickets', (req, res)=>{
     TicketModel.create(req.body)
     .then(tickets => res.json(tickets))
     .catch(err => res.json(err))
 })
 
-app.get('/', async (req, res) => {
+app.get('/tickets', async (req, res) => {
     try {
       const tickets = await TicketModel.find({});
       console.log(tickets);
@@ -29,7 +31,7 @@ app.get('/', async (req, res) => {
     }
   });
 
-  app.put('/:_id', async (req, res) => {
+  app.put('/tickets/:_id', async (req, res) => {
     const {_id} = req.params; 
     const { title, description, contactInfo, updatedAt,status } = req.body; 
 //   console.log({id})
@@ -40,7 +42,7 @@ app.get('/', async (req, res) => {
     if (!updatedTicket) {
       return res.status(404).json({ message: 'Ticket not found!' });
     }
-    
+
     console.log(`Updated ticket: ${updatedTicket}`);
 
     res.status(200).json({ message: 'Ticket updated successfully!', ticket: updatedTicket });

@@ -12,7 +12,7 @@ export default function Kanban() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:1234/');
+                const response = await axios.get('http://localhost:1234/tickets');
                 setTickets(response.data);
                 // console.log(response.data);
             } catch (err) {

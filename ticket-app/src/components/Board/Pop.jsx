@@ -21,7 +21,7 @@ export default function Pop({ visible, onClose, initialData, onSubmit,descriptio
     console.log(updatedData)
     try {
         console.log("ID:",_id)
-        const response = await axios.put(`http://localhost:1234/${_id}`, updatedData);
+        const response = await axios.put(`http://localhost:1234/tickets/${_id}`, updatedData);
         console.log("Response ",response)
         onClose();
         console.log('Ticket updated !');
