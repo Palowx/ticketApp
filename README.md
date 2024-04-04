@@ -11,7 +11,7 @@ This is a simple helpdesk support ticket management application built using MERN
    - [`Specification`](#Specification)
    - [`Installation`](#Installation)
 
-## API documentation
+## API documentation <a id="APIdocumentation"></a>
 ### Database Schema
 | Field              | Type | Description | Required|
 | :---------------- | :------: | :-------------- |:----------|
@@ -118,7 +118,7 @@ The API provides the following endpoints for CRU (Create, Read, Update) operatio
       ```
 
 
-## Specification 📃
+## Specification 📃 <a id="Specification"></a>
 
 1. Functionality
 
@@ -183,7 +183,7 @@ The API provides the following endpoints for CRU (Create, Read, Update) operatio
    - Implement dark mode.
    - Implement Draggable / Droppable 
 
-## Installation 💻
+## Installation 💻 <a id="Installation"></a>
 1. Clone this repository:
 ```bash
 git clone https://github.com/palowx/ticketApp.git
